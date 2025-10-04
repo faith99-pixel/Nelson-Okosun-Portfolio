@@ -1,0 +1,1 @@
+export const sectionPadding = "px-4 sm:px-6 lg:px-8";
