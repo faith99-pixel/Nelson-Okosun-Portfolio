@@ -21,7 +21,7 @@ const ServiceCard = ({ icon, title, description }: ServiceProps) => {
       variants={fadeInUp}
       className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20"
     >
-      <div className="text-red-800 mb-4">
+      <div className="text-purple-600 mb-4">
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
@@ -69,7 +69,7 @@ const Services = () => {
   return (
     <motion.div
       id="services"
-      className={`${sectionPadding} bg-gradient-to-br from-red-950 via-gray-900 to-red-950 text-white py-28`}
+      className={`${sectionPadding} bg-gradient-to-br from-black via-gray-900 to-black text-white py-28`}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
@@ -79,7 +79,7 @@ const Services = () => {
           variants={fadeInUp}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-2">Services</h2>
+          <h2 className="text-4xl font-bold mb-2 text-purple-600">Services</h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             Comprehensive GIS consulting and project management services to transform your spatial data into actionable insights
           </p>

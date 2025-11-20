@@ -10,7 +10,7 @@ type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <div>
+    <div className="w-full overflow-hidden">
         <Profile/>
         <Services/>
         <AboutSection/>

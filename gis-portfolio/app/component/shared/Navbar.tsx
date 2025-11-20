@@ -73,7 +73,7 @@ const Navbar = (props: Props) => {
 
   return (
     <nav className={`fixed top-4 left-0 right-0 mx-auto z-50 ${sectionPadding} transition-all duration-300 ${scrolled ? 'py-3' : 'py-4'}`}>
-      <div className={`max-w-7xl mx-auto flex items-center justify-between backdrop-blur-lg bg-black/70 border border-white/10 rounded-xl p-4 transition-all duration-300 ${scrolled ? 'shadow-lg shadow-green-500/10' : ''}`}>
+      <div className={`max-w-7xl mx-auto flex items-center justify-between backdrop-blur-lg bg-black/70 border border-white/10 rounded-xl p-4 transition-all duration-300 ${scrolled ? 'shadow-lg shadow-purple-600/10' : ''}`}>
         {/* Logo */}
         <button title="Home" onClick={() => scrollToSection("home")} className="flex items-center">
           <Logo />
@@ -104,44 +104,44 @@ const Navbar = (props: Props) => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-5">
           <button
-            onClick={() => scrollToSection("home")}
-            className={`${activeSection === "home" ? "text-red-400" : "text-gray-300 hover:text-red-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className={`${activeSection === "services" ? "text-red-400" : "text-gray-300 hover:text-red-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className={`${activeSection === "about" ? "text-red-400" : "text-gray-300 hover:text-red-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
-          >
-            About me
-          </button>
-          <button
-            onClick={() => scrollToSection("experience")}
-            className={`${activeSection === "experience" ? "text-red-400" : "text-gray-300 hover:text-red-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
-          >
-            Experience
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className={`${activeSection === "contact" ? "text-red-400" : "text-gray-300 hover:text-red-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
-          >
-            Contact me
-          </button>
+             onClick={() => scrollToSection("home")}
+             className={`${activeSection === "home" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
+           >
+             Home
+           </button>
+           <button
+             onClick={() => scrollToSection("services")}
+             className={`${activeSection === "services" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
+           >
+             Services
+           </button>
+           <button
+             onClick={() => scrollToSection("about")}
+             className={`${activeSection === "about" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
+           >
+             About me
+           </button>
+           <button
+             onClick={() => scrollToSection("experience")}
+             className={`${activeSection === "experience" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"} cursor-pointer transition-colors px-3 py-1 rounded-lg hover:bg-white/5`}
+           >
+             Experience
+           </button>
+           {/* <button
+             onClick={() => scrollToSection("contact")}
+             className={`${activeSection === "contact" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"} cursor-pointer transition-colors px-3 py-1 rounded-full hover:bg-white/5`}
+           >
+             Contact me
+           </button> */}
         </div>
 
         {/* Hire Me Button */}
         <div className="hidden md:block">
           <button
             onClick={() => scrollToSection("contact")}
-            className="bg-red-800 hover:bg-red-900 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md hover:shadow-red-800/20"
+            className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-full transition-colors shadow-md hover:shadow-purple-600/30"
           >
-            Hire Me
+            Contact Me
           </button>
         </div>
 
@@ -150,39 +150,39 @@ const Navbar = (props: Props) => {
           <div className="absolute top-16 left-0 right-0 backdrop-blur-lg bg-black/80 border border-white/10 rounded-xl z-50 md:hidden p-4 flex flex-col space-y-2 mt-2">
             <button
               onClick={() => scrollToSection("home")}
-              className={`${activeSection === "home" ? "text-red-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
+              className={`${activeSection === "home" ? "text-purple-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`${activeSection === "services" ? "text-red-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
+              className={`${activeSection === "services" ? "text-purple-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className={`${activeSection === "about" ? "text-red-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
+              className={`${activeSection === "about" ? "text-purple-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
             >
               About me
             </button>
             <button
               onClick={() => scrollToSection("experience")}
-              className={`${activeSection === "experience" ? "text-red-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
+              className={`${activeSection === "experience" ? "text-purple-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
             >
               Experience
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("contact")}
-              className={`${activeSection === "contact" ? "text-red-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-lg transition-colors`}
+              className={`${activeSection === "contact" ? "text-purple-400 bg-white/5" : "text-gray-300"} text-left px-4 py-2 rounded-full transition-colors`}
             >
               Contact me
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-red-800 hover:bg-red-900 text-white font-medium py-2 px-4 rounded-lg transition-colors mt-2"
+              className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-full transition-colors !mt-8"
             >
-              Hire Me
+              Contact Me
             </button>
           </div>  
         )}

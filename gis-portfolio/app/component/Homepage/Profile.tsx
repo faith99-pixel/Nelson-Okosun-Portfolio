@@ -8,27 +8,27 @@ type Props = {};
 
 const Profile = (props: Props) => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [stats, setStats] = useState({ experience: 0, projects: 0, clients: 0 });
+    const [stats, setStats] = useState({ experience: 0, organizations: 0, solutions: 0 });
     const statsRef = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isInView, setIsInView] = useState(false);
 
     // Function to handle smooth scrolling
-  const scrollToSection = (sectionId: string) => {
-    setIsMenuOpen(false); // Close mobile menu if open
-  
-    const element = document.getElementById(sectionId);
-    console.log("Attempting to scroll to:", sectionId, element); // Debug log
-  
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    } else {
-      console.warn(`Element with ID "${sectionId}" not found`);
-    }
-  };
+    const scrollToSection = (sectionId: string) => {
+        setIsMenuOpen(false); // Close mobile menu if open
+
+        const element = document.getElementById(sectionId);
+        console.log("Attempting to scroll to:", sectionId, element); // Debug log
+
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        } else {
+            console.warn(`Element with ID "${sectionId}" not found`);
+        }
+    };
 
     // Counter animation function
     const animateCounter = (start: any, end: any, duration: any, setValue: any, property: any) => {
@@ -38,7 +38,7 @@ const Profile = (props: Props) => {
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
             const value = Math.floor(progress * (end - start) + start);
 
-            setValue((prev: { experience: number; projects: number; clients: number }) => ({ ...prev, [property]: value }));
+            setValue((prev: { experience: number; organizations: number; solutions: number }) => ({ ...prev, [property]: value }));
 
             if (progress < 1) {
                 window.requestAnimationFrame(step);
@@ -73,8 +73,8 @@ const Profile = (props: Props) => {
     useEffect(() => {
         if (isInView) {
             animateCounter(0, 8, 1500, setStats, 'experience');
-            animateCounter(0, 50, 2000, setStats, 'projects');
-            animateCounter(0, 120, 2500, setStats, 'clients');
+            animateCounter(0, 18, 2000, setStats, 'organizations');
+            animateCounter(0, 35, 2500, setStats, 'solutions');
         }
     }, [isInView]);
 
@@ -84,30 +84,48 @@ const Profile = (props: Props) => {
     }, []);
 
     return (
-        <div id='home' className={`flex flex-col md:flex-row items-center gap-8 p-6 bg-gradient-to-br from-red-950 via-gray-900 to-red-950 text-white min-h-screen overflow-hidden ${sectionPadding} backdrop-blur-lg bg-opacity-80 relative pt-40 md:pt-28`}>
-            {/* Animated background elements */}
-            <div className="absolute inset-0 bg-red-950 bg-opacity-30 backdrop-filter backdrop-blur-md z-0"></div>
+        <div id='home' className={`bg-gray-900 text-white min-h-screen overflow-hidden backdrop-blur-lg bg-opacity-80 relative`}>
+            <div className={`flex flex-col md:flex-row items-center justify-center gap-8 p-6 min-h-screen ${sectionPadding} pt-40 md:pt-28 container mx-auto`}>
+                {/* Animated background elements */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-md z-0"></div>
 
-            {/* Animated particles */}
-            <div className="absolute inset-0 overflow-hidden z-0">
-                {[...Array(8)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute rounded-full bg-red-800 bg-opacity-20"
-                        style={{
-                            width: `${Math.random() * 100 + 50}px`,
-                            height: `${Math.random() * 100 + 50}px`,
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            animation: `float ${Math.random() * 10 + 20}s infinite linear`,
-                            opacity: Math.random() * 0.5,
-                            transform: `scale(${Math.random() * 0.8 + 0.2})`,
-                        }}
-                    />
-                ))}
-            </div>
+                {/* Animated particles */}
+                <div className="absolute inset-0 overflow-hidden z-0">
+                    {[...Array(8)].map((_, i) => {
+                        const sizes = [75, 120, 90, 110, 85, 95, 130, 80];
+                        const positions = [
+                            { top: 10, left: 20 },
+                            { top: 60, left: 80 },
+                            { top: 30, left: 60 },
+                            { top: 80, left: 30 },
+                            { top: 20, left: 90 },
+                            { top: 70, left: 10 },
+                            { top: 40, left: 40 },
+                            { top: 90, left: 70 }
+                        ];
+                        const durations = [25, 30, 22, 28, 26, 24, 32, 27];
+                        const opacities = [0.2, 0.3, 0.15, 0.25, 0.35, 0.18, 0.28, 0.22];
+                        const scales = [0.6, 0.8, 0.4, 0.7, 0.9, 0.5, 0.75, 0.65];
 
-            <style jsx>{`
+                        return (
+                            <div
+                                key={i}
+                                className="absolute rounded-full bg-gray-600 bg-opacity-20"
+                                style={{
+                                    width: `${sizes[i]}px`,
+                                    height: `${sizes[i]}px`,
+                                    top: `${positions[i].top}%`,
+                                    left: `${positions[i].left}%`,
+                                    animation: `float ${durations[i]}s infinite linear`,
+                                    opacity: opacities[i],
+                                    transform: `scale(${scales[i]})`,
+                                }}
+                            />
+                        );
+                    })}
+                </div>
+
+                <style jsx>{`
                 @keyframes float {
                     0% { transform: translate(0, 0) rotate(0deg); }
                     50% { transform: translate(100px, 100px) rotate(180deg); }
@@ -124,105 +142,92 @@ const Profile = (props: Props) => {
                 }
             `}</style>
 
-            <div className="flex-1 space-y-6 relative z-10">
-                <div className={`transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <p className="text-gray-300 mb-1">Hi, I am</p>
-                    <h1 className="text-3xl font-bold mb-2">Nelson Okosun</h1>
-                    <h2 className={`text-4xl font-bold text-red-800 mb-8 ${isLoaded ? 'animate-pulse' : ''}`}
-                        style={{
-                            backgroundImage: 'linear-gradient(90deg, #991b1b 0%, #dc2626 50%, #991b1b 100%)',
-                            backgroundSize: '200% auto',
-                            backgroundClip: 'text',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            animation: 'shine 3s linear infinite'
-                        }}>
+                <div className="flex-1 space-y-6 relative z-10 md:mx-4">
+                    <div className={`transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                        <p className="text-gray-300 mb-1">Hi, I am</p>
+                        <h1 className="text-3xl font-bold mb-2">Nelson Okosun</h1>
+                        {/* <h2 className={`text-4xl font-bold !text-[#D4AF37] mb-8 ${isLoaded ? 'animate-pulse' : ''}`}>
                         GIS Consultant & Project Manager
-                    </h2>
+                    </h2> */}
+                        <h2 className={`text-4xl font-bold text-purple-600 mb-8 ${isLoaded ? 'animate-pulse' : ''}`}
+                            style={{
+                                backgroundImage: 'linear-gradient(90deg, #9333ea 0%, #c084fc 50%, #9333ea 100%)',
+                                backgroundSize: '200% auto',
+                                backgroundClip: 'text',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                animation: 'shine 3s linear infinite'
+                            }}>
+                            GIS Consultant & Project Manager
+                        </h2>
 
-                    <div className="flex space-x-4 mb-12">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-800 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
-                            style={{ animationDuration: '2s', animationDelay: '300ms', animationIterationCount: 1 }}>
-                            <Instagram size={16} />
-                        </a>
-                        <a href="mailto:nelson@example.com"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-800 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
-                            style={{ animationDuration: '2s', animationDelay: '400ms', animationIterationCount: 1 }}>
-                            <AtSign size={16} />
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-800 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
-                            style={{ animationDuration: '2s', animationDelay: '500ms', animationIterationCount: 1 }}>
-                            <Linkedin size={16} />
-                        </a>
-                        <a href="#contact"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-800 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
+                        <div className="flex space-x-4 mb-8">
+                            <a href="https://instagram.com/nelson_oaks" target="_blank" rel="noopener noreferrer"
+                                className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
+                                style={{ animationDuration: '2s', animationDelay: '300ms', animationIterationCount: 1 }}>
+                                <Instagram size={16} />
+                            </a>
+                            <a href="mailto:Nelsonokosun@hotmail.com"
+                                className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
+                                style={{ animationDuration: '2s', animationDelay: '400ms', animationIterationCount: 1 }}>
+                                <AtSign size={16} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/nelsonokosun/" target="_blank" rel="noopener noreferrer"
+                                className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
+                                style={{ animationDuration: '2s', animationDelay: '500ms', animationIterationCount: 1 }}>
+                                <Linkedin size={16} />
+                            </a>
+                            {/* <a href="#contact"
+                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                             style={{ animationDuration: '2s', animationDelay: '600ms', animationIterationCount: 1 }}>
                             <MapPin size={16} />
-                        </a>
+                        </a> */}
+                        </div>
                     </div>
-                </div>
 
-                <div className={`flex space-x-4 mb-2 pb-12 transition-all duration-700 delay-200 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
-                    <button
-                        onClick={() => scrollToSection('contact')}
-                        className="bg-red-800 hover:bg-red-900 text-white font-medium py-2 px-6 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-lg relative overflow-hidden group"
+                    <div className={`flex flex-col sm:flex-row gap-4 mb-2 pb-12 w-full sm:w-auto transition-all duration-700 delay-200 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
+                        <button className="border border-gray-600 hover:border-purple-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-600/30 relative overflow-hidden group">
+                            <Link
+                                href="https://drive.google.com/drive/folders/1K6grcQQ3UZTfqT2DhTgN0JtNCrIFwwMY"
+                                target='_blank'
+                                className="relative z-10"
+                            >
+                                Download CV
+                            </Link>
+                            <span className="absolute inset-0 bg-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-20"></span>
+                        </button>
+                    </div>
+
+                    <div
+                        ref={statsRef}
+                        className={`flex w-full md:w-3/5 mt-12 pb-11 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        style={{ transitionDelay: '700ms' }}
                     >
-                        <span className="relative z-10">Hire Me</span>
-                        <span className="absolute inset-0 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-30"></span>
-                    </button>
-                    <button className="border border-gray-600 hover:border-red-400 text-white font-medium py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-lg relative overflow-hidden group">
-                        <Link href="#" target='_blank' className="relative z-10">Download CV</Link>
-                        <span className="absolute inset-0 bg-red-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-20"></span>
-                    </button>
-                </div>
-
-                <div
-                    ref={statsRef}
-                    className={`flex md:w-3/5 mt-12 pb-11 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                    style={{ transitionDelay: '700ms' }}
-                >
-                    <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
-                        <h3 className="text-xl font-bold text-red-800">{stats.experience}+</h3>
-                        <p className="text-xs sm:text-sm text-gray-300 font-semibold">Years Experience</p>
-                    </div>
-                    <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
-                        <h3 className="text-xl font-bold text-red-800">{stats.projects}+</h3>
-                        <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Projects Completed</p>
-                    </div>
-                    <div className="flex-1 px-4 transform transition-all duration-500 hover:scale-105">
-                        <h3 className="text-xl font-bold text-red-800">{stats.clients}+</h3>
-                        <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Happy Clients</p>
+                        <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
+                            <h3 className="text-xl font-bold text-purple-600">{stats.experience}+</h3>
+                            <p className="text-xs sm:text-sm text-gray-300 font-semibold">Years Experience</p>
+                        </div>
+                        <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
+                            <h3 className="text-xl font-bold text-purple-600">{stats.organizations}+</h3>
+                            <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Organizations</p>
+                        </div>
+                        <div className="flex-1 px-4 transform transition-all duration-500 hover:scale-105">
+                            <h3 className="text-xl font-bold text-purple-600">{stats.solutions}+</h3>
+                            <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Solutions Delivered</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className={`relative flex-1 max-w-md transition-all duration-1000 transform ${isLoaded ? 'translate-x-0 opacity-100 rotate-0' : 'translate-x-16 opacity-0 rotate-6'} z-10`}>
-                <div className="relative">
-                    {/* Animated circular background with glassmorphic effect */}
-                    <div
-                        className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 transition-all duration-1000 scale-100 border border-red-400 border-opacity-20"
-                        style={{ animation: 'pulse 4s infinite ease-in-out' }}
-                    ></div>
-
-                    {/* Glowing ring */}
-                    <div
-                        className="w-72 h-72 md:w-96 md:h-96 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"
-                        style={{
-                            boxShadow: '0 0 40px rgba(153, 27, 27, 0.3)',
-                            animation: 'pulse 4s infinite ease-in-out alternate'
-                        }}
-                    ></div>
-
-                    {/* Profile image placeholder */}
-                    <div
-                        className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center"
-                        style={{
-                            boxShadow: '0 0 20px rgba(153, 27, 27, 0.5)'
-                        }}
-                    >
-                        <div className="text-6xl font-bold text-white">NO</div>
+                <div className={`relative flex-1 max-w-xs sm:max-w-sm md:max-w-md transition-all duration-1000 transform ${isLoaded ? 'translate-x-0 opacity-100 rotate-0' : 'translate-x-16 opacity-0 rotate-6'} z-10`}>
+                    <div className="relative">
+                        {/* Profile image */}
+                        <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-xl overflow-hidden shadow-2xl">
+                            <img
+                                src="/images/profile_picture.jpeg"
+                                alt="Nelson Okosun"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

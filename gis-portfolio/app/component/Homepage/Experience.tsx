@@ -7,70 +7,115 @@ import { MapPin, Calendar, Building } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior GIS Consultant & Project Manager",
-      company: "Geospatial Solutions Inc.",
-      location: "Remote",
-      period: "2020 - Present",
+      title: "GIS Coordinator",
+      company: "City of Airdrie, AB (Contract)",
+      location: "Canada",
+      period: "Nov 2024 – Present",
       description: [
-        "Lead cross-functional teams of 8-12 professionals in delivering complex GIS projects",
-        "Manage project budgets ranging from $50K to $500K with 98% on-time delivery rate",
-        "Develop spatial analysis solutions for environmental monitoring and urban planning",
-        "Implement web GIS applications serving 10,000+ daily users"
+        "Leading and coordinating the GIS team, creating complex GIS applications, and assisting Leadership Teams with strategic planning",
+        "Developing complex GIS web-based applications to support business unit requirements with optimized geospatial data management",
+        "Creating, updating, and maintaining GIS maps and SDE data, providing real-time address and land parcel data",
+        "Automating data workflows using Python and FME to streamline GIS processes and improve data integration efficiency",
+        "Leading LiDAR acquisition and management to capture city-wide Bare Earth LAS data and Building footprints",
+        "Expanding City of Airdrie Open Data program using ESRI AGOL platform, increasing transparency and accessibility"
       ],
-      technologies: ["ArcGIS Pro", "Python", "PostgreSQL", "React", "Project Management"]
+      technologies: ["ArcGIS Pro", "Python", "FME", "LiDAR", "ESRI AGOL", "SDE", "Open Data"]
     },
     {
-      title: "GIS Analyst & Project Coordinator",
-      company: "Environmental Data Systems",
+      title: "GIS Analyst",
+      company: "Rio Tinto",
+      location: "Montreal",
+      period: "Feb 2023 – Jun 2024",
+      description: [
+        "Subject matter expert to Closure team for development of systems to capture, store and utilize geotechnical data",
+        "Managing utility and infrastructure on mine sites using various GIS tools",
+        "Supporting ETL automation for importing data into ArcGIS Portal from Landfolio and DroneDeploy",
+        "Final stage deployment and upgrade of ArcGIS Enterprise system for mine closure and rehabilitation unit",
+        "Development of custom ArcGIS Web applications using Experience Builder for land asset data",
+        "Supporting transfer of GIS data into Power BI using ETL transformation for Senior Leadership visualization"
+      ],
+      technologies: ["ArcGIS Enterprise", "ArcGIS Experience Builder", "DroneDeploy", "Landfolio", "Power BI", "ETL"]
+    },
+    {
+      title: "Geo-Data Consultant / Project Manager",
+      company: "INTEGRATION Environment and Energy GmbH",
+      location: "Gräfenberg, Bavaria, Germany",
+      period: "Nov 2020 – Feb 2023",
+      description: [
+        "Providing GIS Data management and Visualization Support on energy projects for multilateral organizations",
+        "Liaising with project partners to understand energy infrastructure needs and translate them into KPIs",
+        "Performing grid network and cluster analysis to find reachable locations within travel time limits",
+        "Supporting remote assessment, demand assessment, distribution network planning, and financial modelling",
+        "Processing data to create visualizations and thematic maps for population centers and large users",
+        "Modelling energy consumption data using R to visualise consumption patterns and estimate similar use-cases"
+      ],
+      technologies: ["GIS", "R", "Energy Modeling", "Grid Analysis", "Financial Modelling", "Data Visualization"]
+    },
+    {
+      title: "Geospatial Features Extractor",
+      company: "United Nations Global Service Centre",
+      location: "Italy",
+      period: "May 2022 – Nov 2022",
+      description: [
+        "Visual interpretation, extraction and geospatial data collection of topographic features using OpenStreetMap",
+        "Creating transportation routing project for global logistics services by integrating OpenRouteService API",
+        "Customizing user interface using Node.js and validating results by comparing with routes in selected countries",
+        "Assisting in development and update of Quality Control and Quality Assurance SOPs for consistent data management"
+      ],
+      technologies: ["OpenStreetMap", "OpenRouteService API", "JavaScript", "Node.js", "Docker", "QA/QC"]
+    },
+    {
+      title: "Data Analyst; Operations Team Lead",
+      company: "OPAY: Opera (Mini) Group",
+      location: "Nigeria",
+      period: "Aug 2019 – Jun 2020",
+      description: [
+        "Managing national online database and merchant information for over 10 million service users",
+        "Performing daily CRM data operations for financial transactions, customer registrations and business development",
+        "Using geographic analysis tools to determine areas with highest transaction origination",
+        "Spooling data using SQL Hue Editor from company CRM and sorting data for different cities analysis"
+      ],
+      technologies: ["SQL", "CRM", "Geographic Analysis", "Data Operations", "Business Intelligence"]
+    },
+    {
+      title: "IT Specialist / Facility Manager",
+      company: "Lagos State Development and Property Corporation",
       location: "Lagos, Nigeria",
-      period: "2018 - 2020",
+      period: "Jul 2018 – Jun 2019",
       description: [
-        "Coordinated environmental monitoring projects across West Africa",
-        "Performed spatial analysis for land use change detection using satellite imagery",
-        "Developed automated workflows reducing data processing time by 60%",
-        "Trained junior analysts in GIS best practices and project methodologies"
+        "Data management and visualization – Creation and maintenance of building information databases",
+        "Facility management for state owned buildings including maintenance audits and compliance monitoring",
+        "Building maintenance audits, materials standard compliance, renovations and refurbishment monitoring"
       ],
-      technologies: ["ArcGIS", "QGIS", "Remote Sensing", "Python", "SQL"]
+      technologies: ["Database Management", "Data Visualization", "Facility Management", "Building Information Systems"]
     },
     {
-      title: "Junior GIS Specialist",
-      company: "Urban Planning Authority",
-      location: "Abuja, Nigeria",
-      period: "2016 - 2018",
+      title: "GIS Analyst; Field Officer",
+      company: "GIS Plus Technologies",
+      location: "Nigeria",
+      period: "Apr 2016 – Oct 2016",
       description: [
-        "Created detailed maps and spatial analyses for urban development projects",
-        "Maintained and updated spatial databases for city planning initiatives",
-        "Collaborated with urban planners and architects on zoning projects",
-        "Conducted field surveys and GPS data collection"
+        "E-LAND PRICING PROJECT - Building electronic land pricing system using ArcGIS with Python scripts",
+        "FUTA WEST GATE Site Selection Project - Site survey, Data Analysis, and preparation of locational maps",
+        "Field Research and mapping, Data Analysis using SPSS and ArcGIS desktop"
       ],
-      technologies: ["ArcGIS", "AutoCAD", "GPS", "Cartography", "Database Management"]
+      technologies: ["ArcGIS", "Python", "SPSS", "Field Research", "Site Analysis", "Land Pricing Systems"]
     }
   ];
 
   return (
     <motion.section
       id="experience"
-      className={`${sectionPadding} bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 text-white py-28`}
+      className={`${sectionPadding} relative bg-black md:py-14 py-8`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A track record of successful GIS projects and team leadership across various industries and scales
-          </p>
-        </motion.div>
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">Work Experience</h2>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto md:max-w-4xl sm:max-w-full sm:px-2">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -82,30 +127,30 @@ const Experience = () => {
             >
               {/* Timeline line */}
               {index < experiences.length - 1 && (
-                <div className="absolute left-6 top-16 w-0.5 h-32 bg-gradient-to-b from-red-800 to-transparent"></div>
+                <div className="hidden md:block absolute left-6 top-16 w-0.5 h-32 bg-gradient-to-b from-purple-600 to-transparent"></div>
               )}
               
               {/* Timeline dot */}
-              <div className="absolute left-4 top-6 w-4 h-4 bg-red-800 rounded-full border-4 border-gray-900"></div>
+              <div className="hidden md:block absolute left-4 top-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-gray-900"></div>
 
               {/* Content */}
-              <div className="ml-16 bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+              <div className="md:ml-16 mx-auto md:mx-0 w-full bg-white/10 border border-purple-600/30 backdrop-blur-sm rounded-2xl pt-14 shadow-lg p-6 hover:bg-white/20 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
-                    <div className="flex items-center space-x-4 text-gray-300 text-sm">
+                    <h3 className="text-xl font-semibold text-purple-400 mb-3">{exp.title}</h3>
+                    <div className="flex flex-col md:flex-row md:items-center md:space-x-4 text-gray-300 text-sm gap-1 md:gap-0">
                       <div className="flex items-center space-x-1">
-                        <Building size={14} />
+                        <Building size={14} className="flex-shrink-0" />
                         <span>{exp.company}</span>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <MapPin size={14} />
+                        <MapPin size={14} className="flex-shrink-0" />
                         <span>{exp.location}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-1 text-red-400 text-sm mt-2 md:mt-0">
-                    <Calendar size={14} />
+                  <div className="flex items-center space-x-1 text-purple-600 text-sm mt-2 md:mt-0">
+                    <Calendar size={14} className="flex-shrink-0" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
@@ -113,8 +158,8 @@ const Experience = () => {
                 <ul className="space-y-2 mb-4">
                   {exp.description.map((item, idx) => (
                     <li key={idx} className="text-gray-300 text-sm flex items-start">
-                      <span className="text-red-800 mr-2 mt-1.5 w-1 h-1 bg-red-800 rounded-full flex-shrink-0"></span>
-                      {item}
+                     <span className="text-purple-600 mr-2 mt-1.5 w-1 h-1 bg-purple-600 rounded-full flex-shrink-0"></span>
+                     {item}
                     </li>
                   ))}
                 </ul>
@@ -123,7 +168,7 @@ const Experience = () => {
                   {exp.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-red-800/20 text-red-300 text-xs rounded-full border border-red-800/30"
+                      className="px-3 py-1 bg-purple-600/20 text-purple-600 text-xs rounded-full border border-purple-600/30"
                     >
                       {tech}
                     </span>
@@ -132,31 +177,7 @@ const Experience = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Call to action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-red-800/20 to-red-900/20 border border-red-800/30 rounded-xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              Ready to Collaborate?
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Let's discuss how my experience can contribute to your next GIS project or team.
-            </p>
-            <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-red-800 hover:bg-red-900 text-white font-medium py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-red-800/20"
-            >
-              Start a Conversation
-            </button>
           </div>
-        </motion.div>
       </div>
     </motion.section>
   );
