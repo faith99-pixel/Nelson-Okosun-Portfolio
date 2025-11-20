@@ -84,7 +84,7 @@ const Profile = (props: Props) => {
     }, []);
 
     return (
-        <div id='home' className={`bg-gray-900 text-white min-h-screen overflow-hidden backdrop-blur-lg bg-opacity-80 relative`}>
+        <div id='home' className={`bg-gray-900 text-white min-h-screen overflow-hidden backdrop-blur-lg bg-opacity-80 relative md:mt-8 mt-3`}>
             <div className={`flex flex-col md:flex-row items-center justify-center gap-8 p-6 min-h-screen ${sectionPadding} pt-40 md:pt-28 container mx-auto`}>
                 {/* Animated background elements */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-md z-0"></div>
@@ -144,7 +144,7 @@ const Profile = (props: Props) => {
 
                 <div className="flex-1 space-y-6 relative z-10 md:mx-4">
                     <div className={`transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                        <p className="text-gray-300 mb-1">Hi, I am</p>
+                        <p className="text-gray-300 mb-1 ">Hi, I am</p>
                         <h1 className="text-3xl font-bold mb-2">Nelson Okosun</h1>
                         {/* <h2 className={`text-4xl font-bold !text-[#D4AF37] mb-8 ${isLoaded ? 'animate-pulse' : ''}`}>
                         GIS Consultant & Project Manager
