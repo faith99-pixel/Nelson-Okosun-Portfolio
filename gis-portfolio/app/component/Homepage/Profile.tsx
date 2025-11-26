@@ -13,23 +13,6 @@ const Profile = (props: Props) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isInView, setIsInView] = useState(false);
 
-    // Function to handle smooth scrolling
-    const scrollToSection = (sectionId: string) => {
-        setIsMenuOpen(false); // Close mobile menu if open
-
-        const element = document.getElementById(sectionId);
-        console.log("Attempting to scroll to:", sectionId, element); // Debug log
-
-        if (element) {
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        } else {
-            console.warn(`Element with ID "${sectionId}" not found`);
-        }
-    };
-
     // Counter animation function
     const animateCounter = (start: any, end: any, duration: any, setValue: any, property: any) => {
         let startTimestamp: any = null;
@@ -162,11 +145,11 @@ const Profile = (props: Props) => {
                         </h2>
 
                         <div className="flex space-x-4 mb-8">
-                            <a href="https://instagram.com/nelson_oaks" target="_blank" rel="noopener noreferrer"
+                            {/* <a href="https://instagram.com/nelson_oaks" target="_blank" rel="noopener noreferrer"
                                 className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                                 style={{ animationDuration: '2s', animationDelay: '300ms', animationIterationCount: 1 }}>
                                 <Instagram size={16} />
-                            </a>
+                            </a> */}
                             <a href="mailto:Nelsonokosun@hotmail.com"
                                 className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white text-gray-400 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                                 style={{ animationDuration: '2s', animationDelay: '400ms', animationIterationCount: 1 }}>

@@ -101,12 +101,12 @@ const Contact = () => {
       url: "https://www.linkedin.com/in/nelsonokosun/",
       color: "hover:text-blue-400"
     },
-    {
-      icon: <Instagram size={20} />,
-      name: "Instagram",
-      url: "https://instagram.com/nelson_okosun",
-      color: "hover:text-pink-400"
-    },
+    // {
+    //   icon: <Instagram size={20} />,
+    //   name: "Instagram",
+    //   url: "https://instagram.com/nelson_okosun",
+    //   color: "hover:text-pink-400"
+    // },
     {
       icon: <Mail size={20} />,
       name: "Email",

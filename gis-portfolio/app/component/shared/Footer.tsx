@@ -35,7 +35,7 @@ const Footer = (props: Props) => {
             >
               <Linkedin size={20} />
             </a>
-            <a 
+            {/* <a 
               href="https://x.com/Nelson_Oaks" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -43,7 +43,7 @@ const Footer = (props: Props) => {
               aria-label="Twitter"
             >
               <Twitter size={20} />
-            </a>
+            </a> */}
             <a 
               href="mailto:Nelsonokosun@hotmail.com"
               className="text-gray-400 hover:text-purple-400 transition-colors"
