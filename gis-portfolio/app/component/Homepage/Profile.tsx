@@ -53,13 +53,13 @@ const Profile = (props: Props) => {
     }, []);
 
     // Trigger counter animation when stats section comes into view
-    useEffect(() => {
-        if (isInView) {
-            animateCounter(0, 8, 1500, setStats, 'experience');
-            animateCounter(0, 18, 2000, setStats, 'organizations');
-            animateCounter(0, 35, 2500, setStats, 'solutions');
-        }
-    }, [isInView]);
+     useEffect(() => {
+         if (isInView) {
+             animateCounter(0, 8, 600, setStats, 'experience');
+             animateCounter(0, 18, 800, setStats, 'organizations');
+             animateCounter(0, 35, 1000, setStats, 'solutions');
+         }
+     }, [isInView]);
 
     useEffect(() => {
         // Trigger animations after component mounts
@@ -86,7 +86,7 @@ const Profile = (props: Props) => {
                             { top: 40, left: 40 },
                             { top: 90, left: 70 }
                         ];
-                        const durations = [25, 30, 22, 28, 26, 24, 32, 27];
+                        const durations = [15, 18, 13, 17, 16, 14, 19, 16];
                         const opacities = [0.2, 0.3, 0.15, 0.25, 0.35, 0.18, 0.28, 0.22];
                         const scales = [0.6, 0.8, 0.4, 0.7, 0.9, 0.5, 0.75, 0.65];
 
@@ -126,7 +126,7 @@ const Profile = (props: Props) => {
             `}</style>
 
                 <div className="flex-1 space-y-6 relative z-10 md:mx-4">
-                    <div className={`transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div className={`transform transition-all duration-400 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="text-gray-300 mb-1 ">Hi, I am</p>
                         <h1 className="text-3xl font-bold mb-2">Nelson Okosun</h1>
                         {/* <h2 className={`text-4xl font-bold !text-[#D4AF37] mb-8 ${isLoaded ? 'animate-pulse' : ''}`}>
@@ -139,7 +139,7 @@ const Profile = (props: Props) => {
                                 backgroundClip: 'text',
                                 WebkitBackgroundClip: 'text',
                                 WebkitTextFillColor: 'transparent',
-                                animation: 'shine 3s linear infinite'
+                                animation: 'shine 1.5s linear infinite'
                             }}>
                             GIS Consultant & Project Manager
                         </h2>
@@ -168,7 +168,7 @@ const Profile = (props: Props) => {
                         </div>
                     </div>
 
-                    <div className={`flex flex-col sm:flex-row gap-4 mb-2 pb-12 w-full sm:w-auto transition-all duration-700 delay-200 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
+                    <div className={`flex flex-col sm:flex-row gap-4 mb-2 pb-12 w-full sm:w-auto transition-all duration-400 delay-100 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
                         <button className="border border-gray-600 hover:border-purple-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-600/30 relative overflow-hidden group">
                             <Link
                                 href="https://drive.google.com/drive/folders/1K6grcQQ3UZTfqT2DhTgN0JtNCrIFwwMY"
@@ -183,25 +183,25 @@ const Profile = (props: Props) => {
 
                     <div
                         ref={statsRef}
-                        className={`flex w-full md:w-3/5 mt-12 pb-11 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        style={{ transitionDelay: '700ms' }}
+                        className={`flex w-full md:w-3/5 mt-12 pb-11 transition-all duration-400 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        style={{ transitionDelay: '400ms' }}
                     >
-                        <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
-                            <h3 className="text-xl font-bold text-purple-600">{stats.experience}+</h3>
-                            <p className="text-xs sm:text-sm text-gray-300 font-semibold">Years Experience</p>
-                        </div>
-                        <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
-                            <h3 className="text-xl font-bold text-purple-600">{stats.organizations}+</h3>
-                            <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Organizations</p>
-                        </div>
-                        <div className="flex-1 px-4 transform transition-all duration-500 hover:scale-105">
+                        <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-300 hover:scale-105">
+                             <h3 className="text-xl font-bold text-purple-600">{stats.experience}+</h3>
+                             <p className="text-xs sm:text-sm text-gray-300 font-semibold">Years Experience</p>
+                         </div>
+                         <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-300 hover:scale-105">
+                             <h3 className="text-xl font-bold text-purple-600">{stats.organizations}+</h3>
+                             <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Organizations</p>
+                         </div>
+                         <div className="flex-1 px-4 transform transition-all duration-300 hover:scale-105">
                             <h3 className="text-xl font-bold text-purple-600">{stats.solutions}+</h3>
                             <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Solutions Delivered</p>
                         </div>
                     </div>
                 </div>
 
-                <div className={`relative flex-1 max-w-xs sm:max-w-sm md:max-w-md transition-all duration-1000 transform ${isLoaded ? 'translate-x-0 opacity-100 rotate-0' : 'translate-x-16 opacity-0 rotate-6'} z-10`}>
+                <div className={`relative flex-1 max-w-xs sm:max-w-sm md:max-w-md transition-all duration-500 transform ${isLoaded ? 'translate-x-0 opacity-100 rotate-0' : 'translate-x-16 opacity-0 rotate-6'} z-10`}>
                     <div className="relative">
                         {/* Profile image */}
                         <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-xl overflow-hidden shadow-2xl">

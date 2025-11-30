@@ -12,7 +12,7 @@ type ServiceProps = {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 const ServiceCard = ({ icon, title, description }: ServiceProps) => {
@@ -90,7 +90,7 @@ const Services = () => {
             hidden: {},
             show: {
               transition: {
-                staggerChildren: 0.2,
+                staggerChildren: 0.1,
               },
             },
           }}

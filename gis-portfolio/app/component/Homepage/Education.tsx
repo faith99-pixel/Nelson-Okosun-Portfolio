@@ -82,14 +82,14 @@ const Education = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
+      transition={{ duration: 0.4 }}
+      >
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+         <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.3 }}
           className="text-center mb-16"
         >
           <h2 className="md:text-4xl text-[26px] font-bold mb-4 text-purple-600">Education & Certifications</h2>
@@ -99,12 +99,12 @@ const Education = () => {
         </motion.div>
 
         {/* Formal Education */}
-        <div className="mb-16">
-          <motion.h3
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+         <div className="mb-16">
+           <motion.h3
+             initial={{ opacity: 0, x: -30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.3 }}
             className="md:text-2xl text-xl font-semibold text-purple-600 mb-8 flex items-center"
             >
              <GraduationCap className="mr-3" size={28} />
@@ -118,7 +118,7 @@ const Education = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
                 className="bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl p-6 hover:bg-white/20 transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
@@ -155,7 +155,7 @@ const Education = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="md:text-2xl text-[20px] font-semibold text-purple-600 mb-8 flex items-center"
             >
              <Award className="mr-3" size={28} />
@@ -169,7 +169,7 @@ const Education = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.25, delay: index * 0.05 }}
                 className={`bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl p-6 transition-all duration-300 ${
                   cert.link ? 'hover:bg-white/20 hover:border-purple-600/50 cursor-pointer group' : 'hover:bg-white/20'
                 }`}
@@ -211,7 +211,7 @@ const Education = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           <h3 className="md:text-2xl text-[20px] font-semibold text-purple-600 mb-8 flex items-center">
             <BookOpen className="mr-3" size={28} />
@@ -226,7 +226,7 @@ const Education = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
                   className="flex items-center space-x-3"
                 >
                   <div className="w-2 h-2 bg-purple-600 rounded-full flex-shrink-0"></div>

@@ -122,14 +122,14 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
+      transition={{ duration: 0.4 }}
+      >
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+         <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.3 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 text-purple-600">Get In Touch</h2>
@@ -144,7 +144,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <h3 className="text-2xl font-semibold text-purple-600 mb-8">Let's Connect</h3>
             
@@ -155,7 +155,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  transition={{ duration: 0.25, delay: 0.2 + index * 0.05 }}
                   className="flex items-center space-x-4 p-4 bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl hover:bg-white/20 transition-all duration-300"
                 >
                   <div className="text-purple-600">
@@ -183,7 +183,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
             >
               <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
@@ -207,7 +207,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1.0 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
               className="mt-8 p-6 bg-gradient-to-r from-purple-600/20 to-purple-600/30 border border-purple-600/30 rounded-xl"
             >
               <h4 className="text-lg font-semibold text-white mb-2">Why Work With Me?</h4>
@@ -225,7 +225,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
