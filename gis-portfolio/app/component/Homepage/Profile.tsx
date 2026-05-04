@@ -171,7 +171,7 @@ const Profile = (props: Props) => {
                     <div className={`flex flex-col sm:flex-row gap-4 mb-2 pb-12 w-full sm:w-auto transition-all duration-400 delay-100 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
                         <button className="border border-gray-600 hover:border-purple-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-600/30 relative overflow-hidden group">
                             <Link
-                                href="https://drive.google.com/drive/folders/1K6grcQQ3UZTfqT2DhTgN0JtNCrIFwwMY"
+                                href="https://drive.google.com/file/d/1JDnrsIixbVWZo_S2Iv1UrmcHuzZfn2sX/view?usp=sharing"
                                 target='_blank'
                                 className="relative z-10"
                             >
